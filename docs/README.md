@@ -1,6 +1,6 @@
 ---
 home: true
-bgImage: '/bg.jpg'
+bgImage: './bg.jpg'
 bgImageStyle: {
       height: 450px,
       text-align: center,
