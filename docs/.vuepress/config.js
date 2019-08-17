@@ -1,6 +1,6 @@
 module.exports = {
     head: [['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}]],
-    base: '/mybBlog/', // 部署到GitHub相关的配置
+    base: '/myBlog/', // 部署到GitHub相关的配置
     theme: 'reco',
     title: '小城旧事',
     description: '怀旧的前端想做全栈',
