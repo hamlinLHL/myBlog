@@ -13,8 +13,13 @@ module.exports = {
         author: 'Hamlin',
         // valine
         valineConfig: {
-            appId: '...',// your appId
-            appKey: '...', // your appKey
+            appId: '20uttEi9BN7qb7fMVhJwCEoc-gzGzoHsz',// your appId
+            appKey: 'W2mkX4DhUukTDsfQeHi7mzQu', // your appKey
+            notify:false,
+            verify:false,
+            avatar:'mp',
+            placeholder: '填写邮箱可以收到回复提醒哦',
+            visitor: true // 阅读量统计
         },
         nav: [
             {text: 'Home', link: '/'},
