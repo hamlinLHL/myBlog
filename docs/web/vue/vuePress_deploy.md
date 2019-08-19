@@ -16,20 +16,20 @@ tags:
 你的 vuepress 项目是否已经在github上的仓库下</br>
 如果是，请跳到第二步</br>
 如果不是，想在GitHub新建一个仓库，如图所示：</br>
-![github1](/image/github1.png)
+![github1](./images/github1.png)
  ## 小坑
 仓库名字要和config.js 里 的 base 属性值一样
-![config1](/image/config1.png)
+![config1](./images/config1.png)
 比如你的仓库名字叫myBlog
 base就是/myBlog/
 ## 1.1
 创建好仓库以后，
-![github2](/image/github2.png)
+![github2](./images/github2.png)
 git clone <你复制的地址>
 把你的vuepress项目除了node_modules文件夹之外的文件全部复制到git clone下来的文件夹内</br>
 然后npm install 或者 yarn</br>
 在项目根目录新建文件.gitignore
-![config1](/image/config2.png)
+![config1](./images/config2.png)
 让git 忽略  node_module下的所有文件和打包以后dist下的所有文件
 ## 1.2 
 1. npm run docs:dev  打包/打包后的文件在docs/.vuepress/dist文件夹下
@@ -52,11 +52,11 @@ git checkout -b gh-pages
 
 # 第三步
 此时github上你应该可以看到你的分支
-![github3](/image/github3.png)
+![github3](./images/github3.png)
 
 点击settings ,然后往下拉，找到 GitHub Pages
 
-![github4](/image/github4.png)
+![github4](./images/github4.png)
 
 在Source的下拉选中你的分支</br>
 出现 Your site is published at 网址</br>
