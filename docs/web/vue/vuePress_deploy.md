@@ -1,6 +1,8 @@
 ---
 title: vuePress部署到Github Page  
 date: 2019-8-19
+categories: 
+- frontEnd
 tags:
 - vuePress
 - 部署

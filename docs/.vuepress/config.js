@@ -1,9 +1,22 @@
 module.exports = {
-    head: [['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}]],
+    head: [
+        ['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}],
+        ['link', {rel: 'icon', href: 'favicon.ico'}]
+    ],
     base: '/myBlog/', // 部署到GitHub相关的配置
     theme: 'reco',
     title: '小城旧事',
     description: '怀旧的前端想做全栈',
+    plugins: {
+        '@vuepress/medium-zoom': {
+            selector: 'img.zoom-custom-imgs',
+            // medium-zoom options here
+            // See: https://github.com/francoischalifour/medium-zoom#options
+            options: {
+                margin: 16
+            }
+        }
+    },
     markdown: {
         lineNumbers: false  // 代码块不显示行号
     },
@@ -24,7 +37,7 @@ module.exports = {
         nav: [
             {text: 'Home', link: '/'},
             {text: '前端', link: '/web/', items: [
-                    {text: 'es6', link: '/web/es6/es7_decorator'},
+                    {text: 'es6', link: '/web/es6/'},
                     {text: 'vue', link: '/web/vue/'}
                 ]},
             {text: 'nodejs', link: '/node/'},
@@ -33,11 +46,15 @@ module.exports = {
             {text: '关于', link: '/nested/',icon: 'account_circle'},
         ],
         sidebar: {
-            '/web/es6/': ['es7_decorator'],
+            '/web/es6/': ['es7_decorator','ArrayBuffer'],
             '/web/vue/': ['vuePress_deploy'],
         },
         // 博客设置
         blogConfig: {
+            category: {
+                location: 6,     // 在导航栏菜单中所占的位置，默认2
+                text: 'Category' // 默认文案 “分类”
+            },
             tag: {
                 location: 5,     // 在导航栏菜单中所占的位置，默认3
                 text: 'Tag'      // 默认文案 “标签”
