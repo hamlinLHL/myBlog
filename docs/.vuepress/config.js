@@ -38,7 +38,8 @@ module.exports = {
             {text: 'Home', link: '/'},
             {text: '前端', link: '/web/', items: [
                     {text: 'es6', link: '/web/es6/'},
-                    {text: 'vue', link: '/web/vue/'}
+                    {text: 'vue', link: '/web/vue/'},
+                    {text: 'H5', link: '/web/H5/'}
                 ]},
             {text: 'nodejs', link: '/node/'},
             {text: 'java', link: '/java/'},
@@ -46,8 +47,9 @@ module.exports = {
             {text: '关于', link: '/nested/',icon: 'account_circle'},
         ],
         sidebar: {
-            '/web/es6/': ['es7_decorator','ArrayBuffer'],
+            '/web/es6/': ['es7_decorator','ArrayBuffer','ts_config'],
             '/web/vue/': ['vuePress_deploy'],
+            '/web/H5/' : ['svg']
         },
         // 博客设置
         blogConfig: {

@@ -2,7 +2,7 @@
 title: es6之ArrayBuffer
 date: 2019-8-23
 categories: 
- - frontEnd
+ - frontend
 tags:
 - es6
 - ArrayBuffer
