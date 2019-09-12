@@ -11,6 +11,7 @@
     "vuepress": "^1.0.3"
   },
   "dependencies": {
+    "vue-property-decorator": "^8.2.2",
     "vuepress-theme-reco": "^1.0.4"
   }
 }

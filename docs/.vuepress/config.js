@@ -45,6 +45,7 @@ module.exports = {
             {text: 'nodejs', link: '/node/'},
             {text: 'java', link: '/java/'},
             {text: '时间线', link: '/timeLine/', icon: 'reco-date'},
+            {text: '友链', link: '/friendLink/'},
             {text: '关于', link: '/nested/',icon: 'account_circle'},
         ],
         sidebar: {
