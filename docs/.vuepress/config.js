@@ -39,7 +39,8 @@ module.exports = {
             {text: '前端', link: '/web/', items: [
                     {text: 'es6', link: '/web/es6/'},
                     {text: 'vue', link: '/web/vue/'},
-                    {text: 'H5', link: '/web/H5/'}
+                    {text: 'H5', link: '/web/H5/'},
+                    {text: 'React', link: '/web/React/'},
                 ]},
             {text: 'nodejs', link: '/node/'},
             {text: 'java', link: '/java/'},
@@ -49,7 +50,8 @@ module.exports = {
         sidebar: {
             '/web/es6/': ['es7_decorator','ArrayBuffer','ts_config'],
             '/web/vue/': ['vuePress_deploy'],
-            '/web/H5/' : ['svg']
+            '/web/H5/' : ['svg'],
+            '/web/React/': ['chess']
         },
         // 博客设置
         blogConfig: {
