@@ -28,7 +28,7 @@ create-react-app demo --typescript
 src文件夹就是开发目录，所有代码都写在src文件夹下</br>
 我们使用sass来写样式,先安装sass
 ```
-npm install sass-node --save
+npm install node-sass --save
 ```
 运行项目
 ```
