@@ -1,12 +1,10 @@
 ---
-title: vuePress部署到Github Page  
-date: 2019-8-19
+title: vuex
+date: 2018-8-19
 categories: 
 - frontend
-- backend
 tags:
-- vuePress
-- 部署
+- vuex
 ---
 # 背景
 网上搜了很多教程，包括[官网的教程](https://vuepress.vuejs.org/zh/guide/deploy.html),但是还是费了一番功夫，</br>

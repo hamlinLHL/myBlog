@@ -1,10 +1,10 @@
 ---
 home: true
-bgImage: './bg.jpg'
+search: true
+bgImage: './bg.png'
 bgImageStyle: {
       height: 450px,
       text-align: center,
       overflow: hidden
 }
-faceImage: '/head.png'
 ---
