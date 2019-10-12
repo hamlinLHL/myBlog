@@ -35,6 +35,16 @@ module.exports = {
             visitor: true,  // 阅读量统计,
             recordIP: true
         },
+        categories: {
+            text: '分类',
+            index: 2,
+            icon: ''
+        },
+        tags: {
+           text: '标签',
+            index: 3,
+           icon: ''
+        },
         nav: [
             {text: 'Home', link: '/', icon: 'hamlin-bili'},
             {text: '前端', link: '/web/', items: [
