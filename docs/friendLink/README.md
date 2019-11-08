@@ -1,2 +1,5 @@
-
+---
+isFriendLink: true
+sidebar: false
+---
 

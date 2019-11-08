@@ -38,12 +38,34 @@ module.exports = {
         categories: {
             text: '分类',
             index: 2,
-            icon: ''
+            icon: 'hamlin-categories'
         },
         tags: {
            text: '标签',
             index: 3,
-           icon: ''
+           icon: 'hamlin-tag'
+        },
+        timeLine: {
+            text: '时间线',
+            index: 5,
+            icon: 'hamlin-date'
+        },
+        friendLink: {
+            text: '友链',
+            index: 10,
+            data: [{
+                name: '小城旧事',
+                introduce: '不会弹吉他的前端不是好全栈',
+                avatar: 'http://honglinliu.com/picture/lufei1.jpg',
+                src: 'http://honglinliu.com/myBlog/'
+            },
+                {
+                    name: '麋鹿鲁哟',
+                    introduce: '大道至简，知易行难',
+                    avatar: 'https://miluluyo.github.io/union/o_my.jpg',
+                    src: 'https://www.cnblogs.com/miluluyo/'
+                }],
+            icon: 'hamlin-friendLink'
         },
         nav: [
             {text: 'Home', link: '/', icon: 'hamlin-bili'},
@@ -55,8 +77,6 @@ module.exports = {
                 ]},
             {text: 'nodejs', link: '/node/'},
             {text: 'java', link: '/java/'},
-            {text: '时间线', link: '/timeLine/', icon: 'reco-date'},
-            {text: '友链', link: '/friendLink/'},
             {text: '关于', link: '/nested/',icon: 'account_circle'},
         ],
         sidebar: {
