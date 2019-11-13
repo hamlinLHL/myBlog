@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "vue-property-decorator": "^8.2.2",
-    "vuepress-theme-reco": "^1.1.1",
-    "vuepress-theme-secondary_element": "^1.0.1"
+    "vuepress-theme-secondary_element": "^1.0.2"
   }
 }
