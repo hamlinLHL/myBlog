@@ -1,5 +1,4 @@
 module.exports = {
-    theme: 'vuepress-theme-secondary_element',
     head: [
         ['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}],
         ['link', {rel: 'icon', href: 'favicon.ico'}]
@@ -7,22 +6,12 @@ module.exports = {
     base: '/myBlog/', // 部署到GitHub相关的配置
     title: '小城旧事',
     description: '怀旧的前端想做全栈',
-    plugins: {
-        '@vuepress/medium-zoom': {
-            selector: 'img.zoom-custom-imgs',
-            // medium-zoom options here
-            // See: https://github.com/francoischalifour/medium-zoom#options
-            options: {
-                margin: 16
-            }
-        }
-    },
     markdown: {
         lineNumbers: false  // 代码块不显示行号
     },
     themeConfig: {
         author: 'Hamlin',
-        logo: '/bg.jpg',
+        avatar: 'https://miluluyo.github.io/union/o_my.jpg',
         search: true,
         // valine
         valineConfig: {
@@ -30,7 +19,6 @@ module.exports = {
             appKey: 'W2mkX4DhUukTDsfQeHi7mzQu', // your appKey
             notify:true,
             verify:true,
-            avatar:'mp',
             avatar:'identicon',
             placeholder: '填写邮箱可以收到回复提醒哦',
             visitor: true,  // 阅读量统计,

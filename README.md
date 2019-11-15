@@ -1,7 +1,7 @@
-## 全栈呀  快活呀
+## 全栈直通车
 
-+ 记录 学习   
-+ 主要是前端
-+ js  => node => java  
++ 吉他   
++ 前端 + Java
++ 撩骚
 
-[快速通道，你我同行](https://chasellhl.github.io/myBlog/)
+[move to](https://chasellhl.github.io/myBlog/)
