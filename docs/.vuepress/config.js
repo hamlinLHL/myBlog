@@ -1,4 +1,5 @@
 module.exports = {
+    theme: "vuepress-theme-secondary_element",
     head: [
         ['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}],
         ['link', {rel: 'icon', href: 'favicon.ico'}]
@@ -70,7 +71,7 @@ module.exports = {
         ],
         sidebar: {
             '/web/es6/': ['es7_decorator','ArrayBuffer','ts_config'],
-            '/web/vue/': ['vuePress_deploy'],
+            '/web/vue/': ['vuePress_deploy','vuePress_deploy_2'],
             '/web/H5/' : ['svg'],
             '/web/React/': ['chess']
         },
