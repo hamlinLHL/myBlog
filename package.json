@@ -5,6 +5,7 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
-    "vuepress": "^1.0.3"
+    "vuepress": "^1.0.3",
+    "vuepress-theme-secondary_element": "^1.0.4"
   }
 }
