@@ -12,7 +12,7 @@ module.exports = {
     },
     themeConfig: {
         author: 'Hamlin',
-        avatar: 'https://miluluyo.github.io/union/o_my.jpg',
+        avatar: '/head.png',
         search: true,
         // valine
         valineConfig: {
@@ -66,14 +66,17 @@ module.exports = {
                     {text: 'React', link: '/web/React/'},
                 ]},
             {text: 'nodejs', link: '/node/'},
-            {text: 'java', link: '/java/'},
+            {text: 'java', link: '/java/', items: [
+                    {text: '部署', link: '/java/deploy/'}
+                ]},
             {text: '关于', link: '/nested/',icon: 'account_circle'},
         ],
         sidebar: {
             '/web/es6/': ['es7_decorator','ArrayBuffer','ts_config'],
             '/web/vue/': ['vuePress_deploy','vuePress_deploy_2'],
             '/web/H5/' : ['svg'],
-            '/web/React/': ['chess']
+            '/web/React/': ['chess'],
+            '/java/deploy/': ['deploy_nginx']
         },
         sidebarDepth: 2, // 侧边栏显示2级
         lastUpdated: 'Last Updated', // string | boolean
