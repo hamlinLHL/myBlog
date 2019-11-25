@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React + Ts 实现三子棋小游戏 | 小城旧事</title>
+    <meta name="description" content="怀旧的前端想做全栈">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="icon" href="favicon.ico">
+    
+    <link rel="preload" href="/myBlog/assets/css/0.styles.0574c042.css" as="style"><link rel="preload" href="/myBlog/assets/js/app.69860394.js" as="script"><link rel="preload" href="/myBlog/assets/js/3.67a929d9.js" as="script"><link rel="preload" href="/myBlog/assets/js/27.4d595f46.js" as="script"><link rel="prefetch" href="/myBlog/assets/js/1.8bcbe5dc.js"><link rel="prefetch" href="/myBlog/assets/js/10.6a2e920d.js"><link rel="prefetch" href="/myBlog/assets/js/11.435bfec9.js"><link rel="prefetch" href="/myBlog/assets/js/12.e47020f3.js"><link rel="prefetch" href="/myBlog/assets/js/13.91edd497.js"><link rel="prefetch" href="/myBlog/assets/js/14.67539fdc.js"><link rel="prefetch" href="/myBlog/assets/js/15.ff64c405.js"><link rel="prefetch" href="/myBlog/assets/js/16.72f69bd9.js"><link rel="prefetch" href="/myBlog/assets/js/17.c9c84f53.js"><link rel="prefetch" href="/myBlog/assets/js/18.e939fa8c.js"><link rel="prefetch" href="/myBlog/assets/js/19.9edecbe5.js"><link rel="prefetch" href="/myBlog/assets/js/20.fd1c6970.js"><link rel="prefetch" href="/myBlog/assets/js/21.4a4315b4.js"><link rel="prefetch" href="/myBlog/assets/js/22.5affa603.js"><link rel="prefetch" href="/myBlog/assets/js/23.c83d4e48.js"><link rel="prefetch" href="/myBlog/assets/js/24.13ab0b6c.js"><link rel="prefetch" href="/myBlog/assets/js/25.c6084f33.js"><link rel="prefetch" href="/myBlog/assets/js/26.6489ee65.js"><link rel="prefetch" href="/myBlog/assets/js/28.1e9ce427.js"><link rel="prefetch" href="/myBlog/assets/js/29.c14a7a38.js"><link rel="prefetch" href="/myBlog/assets/js/30.9c6e5dcf.js"><link rel="prefetch" href="/myBlog/assets/js/31.9aadf287.js"><link rel="prefetch" href="/myBlog/assets/js/4.7bfe68e6.js"><link rel="prefetch" href="/myBlog/assets/js/5.360390f8.js"><link rel="prefetch" href="/myBlog/assets/js/6.f09209e3.js"><link rel="prefetch" href="/myBlog/assets/js/7.bb2a3e2c.js"><link rel="prefetch" href="/myBlog/assets/js/8.60e4226d.js"><link rel="prefetch" href="/myBlog/assets/js/9.4952f84a.js">
+    <link rel="stylesheet" href="/myBlog/assets/css/0.styles.0574c042.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><main data-v-21dcf9ee><div class="back" data-v-21dcf9ee></div> <button class="back-btn" data-v-21dcf9ee><i class="iconfont hamlin-rocket" data-v-21dcf9ee></i></button></main> <div class="navbar"><div class="header-bg home_bg"></div> <div class="nav-mask"></div> <header><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myBlog/" class="home-link router-link-active"><div class="img-container"><img src="/myBlog/head.png" alt="小城旧事" class="logo can-hide"> <div class="personal"><div class="personal-head"><p class="name">小城旧事</p> <p class="des">怀旧的前端想做全栈</p></div></div></div> <span class="site-name">小城旧事</span></a> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/myBlog/" class="nav-link"><i class="iconfont hamlin-bili"></i>Home</a></div><div class="nav-item"><a href="/myBlog/categories/" class="nav-link"><i class="iconfont hamlin-categories"></i>分类</a></div><div class="nav-item"><a href="/myBlog/tags/" class="nav-link"><i class="iconfont hamlin-tag"></i>标签</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myBlog/web/es6/" class="nav-link"><i class="iconfont undefined"></i>es6</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/vue/" class="nav-link"><i class="iconfont undefined"></i>vue</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/H5/" class="nav-link"><i class="iconfont undefined"></i>H5</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/React/" class="nav-link router-link-active"><i class="iconfont undefined"></i>React</a></li></ul></div></div><div class="nav-item"><a href="/myBlog/node/" class="nav-link"><i class="iconfont undefined"></i>nodejs</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">java</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myBlog/java/deploy/" class="nav-link"><i class="iconfont undefined"></i>部署</a></li></ul></div></div><div class="nav-item"><a href="/myBlog/nested/" class="nav-link"><i class="iconfont account_circle"></i>关于</a></div><div class="nav-item"><a href="/myBlog/timeLine/" class="nav-link"><i class="iconfont hamlin-date"></i>时间线</a></div><div class="nav-item"><a href="/myBlog/friendLink/" class="nav-link"><i class="iconfont hamlin-friendLink"></i>友链</a></div> <a href="https://github.com/ChaselLHL/myBlog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div> <div class="hero"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></header></div> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/myBlog/" class="nav-link"><i class="iconfont hamlin-bili"></i>Home</a></div><div class="nav-item"><a href="/myBlog/categories/" class="nav-link"><i class="iconfont hamlin-categories"></i>分类</a></div><div class="nav-item"><a href="/myBlog/tags/" class="nav-link"><i class="iconfont hamlin-tag"></i>标签</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myBlog/web/es6/" class="nav-link"><i class="iconfont undefined"></i>es6</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/vue/" class="nav-link"><i class="iconfont undefined"></i>vue</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/H5/" class="nav-link"><i class="iconfont undefined"></i>H5</a></li><li class="dropdown-item"><!----> <a href="/myBlog/web/React/" class="nav-link router-link-active"><i class="iconfont undefined"></i>React</a></li></ul></div></div><div class="nav-item"><a href="/myBlog/node/" class="nav-link"><i class="iconfont undefined"></i>nodejs</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">java</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myBlog/java/deploy/" class="nav-link"><i class="iconfont undefined"></i>部署</a></li></ul></div></div><div class="nav-item"><a href="/myBlog/nested/" class="nav-link"><i class="iconfont account_circle"></i>关于</a></div><div class="nav-item"><a href="/myBlog/timeLine/" class="nav-link"><i class="iconfont hamlin-date"></i>时间线</a></div><div class="nav-item"><a href="/myBlog/friendLink/" class="nav-link"><i class="iconfont hamlin-friendLink"></i>友链</a></div> <a href="https://github.com/ChaselLHL/myBlog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/myBlog/web/React/chess.html" class="active sidebar-link">React + Ts 实现三子棋小游戏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#游戏规则" class="sidebar-link">游戏规则</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#组件化" class="sidebar-link">组件化</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#开发棋子组件" class="sidebar-link">开发棋子组件</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#开发棋盘组件" class="sidebar-link">开发棋盘组件</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#开发游戏规则组件" class="sidebar-link">开发游戏规则组件</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#开发显示游戏状态的组件" class="sidebar-link">开发显示游戏状态的组件</a></li><li class="sidebar-sub-header"><a href="/myBlog/web/React/chess.html#收尾" class="sidebar-link">收尾</a></li></ul></li></ul> </aside> <main class="page"> <h1>React + Ts 实现三子棋小游戏</h1> <div class="page-title" data-v-84f37156><div class="author item" data-v-84f37156><i class="iconfont hamlin-person" data-v-84f37156></i> <span data-v-84f37156>Hamlin</span></div> <div class="date item" data-v-84f37156><i class="iconfont hamlin-date" data-v-84f37156></i> <span data-v-84f37156>2019/9/12</span></div> <div class="count item" data-v-84f37156><i class="iconfont hamlin-eye" data-v-84f37156></i> <span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-84f37156><i class="leancloud-visitors-count" data-v-84f37156></i></span></div> <div class="pageTag item" data-v-84f37156><i class="iconfont hamlin-tag" data-v-84f37156></i> <a href="/myBlog/tags" data-v-84f37156><span data-v-84f37156>react</span><span data-v-84f37156>ts</span></a></div></div> <div class="content__default"><h1 id="还记得当年和同桌在草稿纸上下三子棋的时光吗"><a href="#还记得当年和同桌在草稿纸上下三子棋的时光吗" class="header-anchor">#</a> 还记得当年和同桌在草稿纸上下三子棋的时光吗</h1> <p>今天我们就用代码来重温一下年少（假设你有react基础，没有也行，只要你会三大框架的任意一种，上手react不难）</p> <h2 id="游戏规则"><a href="#游戏规则" class="header-anchor">#</a> 游戏规则</h2> <ul><li>双方各执一子，在九宫格内一方三子连成线则游戏结束</li> <li>九宫格下满未有三子连线则视为平局</li></ul> <p><a href="http://honglinliu.com/demo/game/" target="_blank" rel="noopener noreferrer">你可以点击这里来体验最终效果，样式有点丑，请见谅<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h1 id="准备阶段"><a href="#准备阶段" class="header-anchor">#</a> 准备阶段</h1> <p>建议先全局安装typescript 和 create-react-app（<strong>安装过请忽略</strong>）</p> <div class="language- extra-class"><pre class="language-text"><code>npm install typescript create-react-app -g
+</code></pre></div><p>使用typescript初始化项目</p> <div class="language- extra-class"><pre class="language-text"><code>create-react-app demo --typescript
+</code></pre></div><p>初始化成功后ts环境已经配好了，不需要你手动加ts配置<br>
+此时就是tsx语法，我们就可以愉快的写ts了<br>
+src文件夹就是开发目录，所有代码都写在src文件夹下<br>
+我们使用sass来写样式,先安装sass</p> <div class="language- extra-class"><pre class="language-text"><code>npm install node-sass --save
+</code></pre></div><p>运行项目</p> <div class="language- extra-class"><pre class="language-text"><code>npm run start
+</code></pre></div><p>删掉初始化界面的一些代码</p> <h1 id="开发阶段"><a href="#开发阶段" class="header-anchor">#</a> 开发阶段</h1> <h2 id="组件化"><a href="#组件化" class="header-anchor">#</a> 组件化</h2> <p>开发一个项目其实就是开发组件<br>
+把一个项目拆分一个个小组件，方便后期维护以及复用</p> <ol><li>棋子组件</li> <li>棋盘组件</li> <li>游戏规则组件</li> <li>游戏状态组件</li></ol> <p>react中组件分为类组件和函数组件<br>
+需要管理状态的最好使用类组件<br>
+所以我们先把App改成类组件</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./App.css'</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> React<span class="token punctuation">.</span>ReactElement<span class="token operator">&lt;</span>any<span class="token punctuation">,</span> string <span class="token operator">|</span> React<span class="token punctuation">.</span>JSXElementConstructor<span class="token operator">&lt;</span>any<span class="token operator">&gt;&gt;</span> <span class="token operator">|</span> string <span class="token operator">|</span> number <span class="token operator">|</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">|</span> React<span class="token punctuation">.</span>ReactNodeArray <span class="token operator">|</span> React<span class="token punctuation">.</span>ReactPortal <span class="token operator">|</span> boolean <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre></div><h2 id="开发棋子组件"><a href="#开发棋子组件" class="header-anchor">#</a> 开发棋子组件</h2> <p>在src下新建component文件夹，在component文件夹下新建ChessComp.tsx,ChessComp.css<br>
+以后我们的组件都放在component文件夹下<br>
+棋子组件我们使用函数组件，思考需要传入组件的属性的类型：</p> <ol><li>type(棋子的类型)</li> <li>onClick(点击棋子触发的回调函数)</li></ol> <p>棋子类型有三种（红子 ，黑子， 空），<br>
+为了约束棋子类型，我们使用一个枚举类型，<br>
+在src下新建types文件夹，专门放类型约束，<br>
+在types下新建enums.ts约束棋子类型<br></p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">enum</span> ChessType <span class="token punctuation">{</span>
+    none<span class="token punctuation">,</span>
+    red<span class="token punctuation">,</span>
+    black
+<span class="token punctuation">}</span>
+</code></pre></div><p>并在棋子tsx中导入<br>
+传入tsx的所有属性用一个IProps接口约束<br></p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">interface</span> <span class="token class-name">IProps</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> ChessType
+    onClick<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>全部tsx代码：</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ChessType<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/enums&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./ChessComp.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IProps</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> ChessType
+    onClick<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">ChessComp</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>type<span class="token punctuation">,</span> onClick<span class="token punctuation">}</span><span class="token punctuation">:</span> IProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> chess <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> ChessType<span class="token punctuation">.</span>red<span class="token punctuation">:</span>
+            chess <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;red chess-item&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> ChessType<span class="token punctuation">.</span>black<span class="token punctuation">:</span>
+            chess <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;black chess-item&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            chess <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;chess&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> ChessType<span class="token punctuation">.</span>none <span class="token operator">&amp;&amp;</span> onClick<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>chess<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> ChessComp<span class="token punctuation">;</span>
+</code></pre></div><p>其中棋子只有为none类型时才能被点击
+scss 代码：<br>
+棋子我们用背景颜色径向渐变来模拟</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code>$borderColor<span class="token punctuation">:</span> #dddddd<span class="token punctuation">;</span>
+$redChess<span class="token punctuation">:</span> #ff4400<span class="token punctuation">;</span>
+$blackChess<span class="token punctuation">:</span> #<span class="token number">282</span>c34<span class="token punctuation">;</span>
+<span class="token punctuation">.</span>chess<span class="token punctuation">{</span>
+    display<span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    justify<span class="token operator">-</span>content<span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    align<span class="token operator">-</span>items<span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    width<span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+    height<span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+    border<span class="token punctuation">:</span> <span class="token number">2</span>px solid $borderColor<span class="token punctuation">;</span>
+    box<span class="token operator">-</span>sizing<span class="token punctuation">:</span> border<span class="token operator">-</span>box<span class="token punctuation">;</span>
+    cursor<span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>chess<span class="token operator">-</span>item<span class="token punctuation">{</span>
+        width<span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+        height<span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+        border<span class="token operator">-</span>radius<span class="token punctuation">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>red<span class="token punctuation">{</span>
+        background<span class="token punctuation">:</span> radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>#fff<span class="token punctuation">,</span> $redChess<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>black<span class="token punctuation">{</span>
+        background<span class="token punctuation">:</span> radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>#fff<span class="token punctuation">,</span> $blackChess<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="开发棋盘组件"><a href="#开发棋盘组件" class="header-anchor">#</a> 开发棋盘组件</h2> <p>同理在component文件夹下新建BoardComp.tsx,BoardComp.scss<br>
+棋盘组件我们需要传递三个参数：<br></p> <ol><li>棋子的数组</li> <li>游戏是否结束</li> <li>点击事件函数</li></ol> <p>循环数组渲染棋子， 并给游戏是否结束一个默认值
+全部tsx代码：</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ChessType<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/enums&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ChessComp <span class="token keyword">from</span> <span class="token string">&quot;./ChessComp&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;./BoardComp.scss&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">IProps</span> <span class="token punctuation">{</span>
+    chesses<span class="token punctuation">:</span> ChessType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    isGameOver<span class="token operator">?</span><span class="token punctuation">:</span> boolean
+    onClick<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">:</span> number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> BoardComp<span class="token punctuation">:</span> React<span class="token punctuation">.</span><span class="token constant">FC</span><span class="token operator">&lt;</span>IProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 类型断言</span>
+    <span class="token keyword">const</span> isGameOver <span class="token operator">=</span> props<span class="token punctuation">.</span>isGameOver <span class="token keyword">as</span> boolean<span class="token punctuation">;</span>
+    <span class="token comment">// 非空断言</span>
+    <span class="token comment">// const isGameOver = props.isGameOver!;</span>
+    <span class="token keyword">const</span> list <span class="token operator">=</span> props<span class="token punctuation">.</span>chesses<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>ChessComp
+                type<span class="token operator">=</span><span class="token punctuation">{</span>type<span class="token punctuation">}</span>
+                key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span>
+            onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>onClick <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isGameOver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    props<span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;board&quot;</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>list<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+BoardComp<span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+  isGameOver<span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> BoardComp<span class="token punctuation">;</span>
+</code></pre></div><p>scss 代码：<br>
+使用flex布局</p> <div class="language-scss extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br></div><pre class="language-scss"><code><span class="token selector">.board</span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="开发游戏规则组件"><a href="#开发游戏规则组件" class="header-anchor">#</a> 开发游戏规则组件</h2> <p>在component文件夹下新建Game.tsx,Game.scss<br>
+游戏规则组件不需要传参，我们使用类组件来管理状态<br>
+在types文件夹下的enums.ts里新增游戏状态的枚举类型</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">enum</span> ChessType <span class="token punctuation">{</span>
+    none<span class="token punctuation">,</span>
+    red<span class="token punctuation">,</span>
+    black
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">enum</span> GameStatus <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * 游戏中
+     */</span>
+    gaming<span class="token punctuation">,</span>
+    <span class="token comment">/**
+     * 红方胜利
+     */</span>
+    redWin<span class="token punctuation">,</span>
+    <span class="token comment">/**
+     * 黑方胜利
+     */</span>
+    blackWin<span class="token punctuation">,</span>
+    <span class="token comment">/**
+     * 平局
+     */</span>
+    equal<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>核心的代码就是如何判断游戏的状态，我的方法有点死，你们可以自己重构，</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ChessType<span class="token punctuation">,</span> GameStatus<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/enums&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> BoardComp <span class="token keyword">from</span> <span class="token string">&quot;./BoardComp&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> GameStatusComp <span class="token keyword">from</span> <span class="token string">&quot;./GameStatusComp&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./Game.scss'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 棋子的数组
+ * 游戏状态
+ * 下一次下棋的类型
+ */</span>
+<span class="token keyword">interface</span> <span class="token class-name">Istate</span> <span class="token punctuation">{</span>
+    chesses<span class="token punctuation">:</span> ChessType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    gameStatus<span class="token punctuation">:</span> GameStatus<span class="token punctuation">,</span>
+    nextChess<span class="token punctuation">:</span> ChessType<span class="token punctuation">.</span>red <span class="token operator">|</span> ChessType<span class="token punctuation">.</span>black
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Game</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token operator">&lt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> Istate<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">:</span> Istate <span class="token operator">=</span> <span class="token punctuation">{</span>
+        chesses<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        gameStatus<span class="token punctuation">:</span> GameStatus<span class="token punctuation">.</span>gaming<span class="token punctuation">,</span>
+        nextChess<span class="token punctuation">:</span> ChessType<span class="token punctuation">.</span>black
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 组件挂载完初始化
+     */</span>
+    <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/**
+     * 初始化9宫格
+     */</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> arr<span class="token punctuation">:</span> ChessType<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ChessType<span class="token punctuation">.</span>none<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            chesses<span class="token punctuation">:</span> arr<span class="token punctuation">,</span>
+            gameStatus<span class="token punctuation">:</span> GameStatus<span class="token punctuation">.</span>gaming<span class="token punctuation">,</span>
+            nextChess<span class="token punctuation">:</span> ChessType<span class="token punctuation">.</span>black
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 处理点击事件，改变棋子状态和游戏状态
+     */</span>
+    <span class="token function">handleChessClick</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> chesses<span class="token punctuation">:</span> ChessType<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>this<span class="token punctuation">.</span>state<span class="token punctuation">.</span>chesses<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        chesses<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>nextChess<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">preState</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+            chesses<span class="token punctuation">,</span>
+            nextChess<span class="token punctuation">:</span> preState<span class="token punctuation">.</span>nextChess <span class="token operator">===</span> ChessType<span class="token punctuation">.</span>black<span class="token operator">?</span> ChessType<span class="token punctuation">.</span>red <span class="token punctuation">:</span> ChessType<span class="token punctuation">.</span>black<span class="token punctuation">,</span>
+            gameStatus<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getStatus</span><span class="token punctuation">(</span>chesses<span class="token punctuation">,</span> index<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 获取游戏状态
+     */</span>
+    <span class="token function">getStatus</span><span class="token punctuation">(</span>chesses<span class="token punctuation">:</span> ChessType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">:</span> number<span class="token punctuation">)</span><span class="token punctuation">:</span> GameStatus <span class="token punctuation">{</span>
+        <span class="token comment">// 判断是否有一方胜利</span>
+        <span class="token keyword">const</span> horMin <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>index<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> verMin <span class="token operator">=</span> index <span class="token operator">%</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token comment">// 横向， 纵向， 斜向胜利</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>chesses<span class="token punctuation">[</span>horMin<span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span>horMin <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span>horMin <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span>horMin <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+            <span class="token punctuation">(</span>chesses<span class="token punctuation">[</span>verMin<span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span>verMin <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span>verMin <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span>verMin <span class="token operator">+</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+            <span class="token punctuation">(</span>chesses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!==</span> ChessType<span class="token punctuation">.</span>none<span class="token punctuation">)</span> <span class="token operator">||</span>
+            <span class="token punctuation">(</span><span class="token punctuation">(</span>chesses<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">===</span> chesses<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> chesses<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">!==</span> ChessType<span class="token punctuation">.</span>none<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> chesses<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">===</span> ChessType<span class="token punctuation">.</span>black <span class="token operator">?</span> GameStatus<span class="token punctuation">.</span>blackWin <span class="token punctuation">:</span> GameStatus<span class="token punctuation">.</span>redWin<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 平局</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>chesses<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>ChessType<span class="token punctuation">.</span>none<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> GameStatus<span class="token punctuation">.</span>equal<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 游戏中</span>
+        <span class="token keyword">return</span> GameStatus<span class="token punctuation">.</span>gaming<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> React<span class="token punctuation">.</span>ReactNode <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;game&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>三子棋游戏<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>GameStatusComp next<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>nextChess<span class="token punctuation">}</span> status<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>gameStatus<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>BoardComp
+                chesses<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>chesses<span class="token punctuation">}</span>
+                isGameOver<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>gameStatus <span class="token operator">!==</span> GameStatus<span class="token punctuation">.</span>gaming<span class="token punctuation">}</span>
+                onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleChessClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token operator">&gt;</span>重新开始<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Game<span class="token punctuation">;</span>
+</code></pre></div><p>样式</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.game</span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 250px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="开发显示游戏状态的组件"><a href="#开发显示游戏状态的组件" class="header-anchor">#</a> 开发显示游戏状态的组件</h2> <p>这个组件用来显示状态，在component文件夹下新建GameStatus.tsx,GameStatus.scss<br>
+没什么好说的，直接上代码</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ChessType<span class="token punctuation">,</span> GameStatus<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/enums&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./GameStatus.scss'</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">Iprops</span> <span class="token punctuation">{</span>
+    status<span class="token punctuation">:</span> GameStatus
+    next<span class="token punctuation">:</span> ChessType<span class="token punctuation">.</span>red <span class="token operator">|</span> ChessType<span class="token punctuation">.</span>black
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">GameStatusComp</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">:</span> Iprops</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> content<span class="token punctuation">:</span> <span class="token constant">JSX</span><span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>status <span class="token operator">===</span> GameStatus<span class="token punctuation">.</span>gaming<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>next <span class="token operator">===</span> ChessType<span class="token punctuation">.</span>red<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            content <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;next red&quot;</span><span class="token operator">&gt;</span>红方落子<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            content <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;next black&quot;</span><span class="token operator">&gt;</span>黑方落子<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>status <span class="token operator">===</span> GameStatus<span class="token punctuation">.</span>redWin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            content <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;win red&quot;</span><span class="token operator">&gt;</span>红方胜利<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>status <span class="token operator">===</span> GameStatus<span class="token punctuation">.</span>blackWin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            content <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;win black&quot;</span><span class="token operator">&gt;</span>黑方胜利<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            content <span class="token operator">=</span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;win equal&quot;</span><span class="token operator">&gt;</span>平局<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;status&quot;</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>content<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> GameStatusComp<span class="token punctuation">;</span>
+</code></pre></div><div class="language-scss extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-scss"><code><span class="token selector">.status </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token selector">.next,.win</span><span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.win</span><span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.equal</span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> antiquewhite<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.red</span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #ff4400<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.black</span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #282c34<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="收尾"><a href="#收尾" class="header-anchor">#</a> 收尾</h2> <p>最后在app.tsx里调用game组件</p> <div class="language-js extra-class"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./App.scss'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Game <span class="token keyword">from</span> <span class="token string">&quot;./component/Game&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> React<span class="token punctuation">.</span>ReactElement<span class="token operator">&lt;</span>any<span class="token punctuation">,</span> string <span class="token operator">|</span> React<span class="token punctuation">.</span>JSXElementConstructor<span class="token operator">&lt;</span>any<span class="token operator">&gt;&gt;</span> <span class="token operator">|</span> string <span class="token operator">|</span> number <span class="token operator">|</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">|</span> React<span class="token punctuation">.</span>ReactNodeArray <span class="token operator">|</span> React<span class="token punctuation">.</span>ReactPortal <span class="token operator">|</span> boolean <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App&quot;</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Game<span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre></div></div> <!----> <!----> <!----> <!----> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ChaselLHL/myBlog/edit/master/web/React/chess.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/12/2019, 2:05:23 PM</span></div></footer> <!---->  <div class="valine" data-v-d33e3cd0><div id="comment" data-v-d33e3cd0></div></div></main></div><div class="global-ui"></div></div>
+    <script src="/myBlog/assets/js/app.69860394.js" defer></script><script src="/myBlog/assets/js/3.67a929d9.js" defer></script><script src="/myBlog/assets/js/27.4d595f46.js" defer></script>
+  </body>
+</html>
